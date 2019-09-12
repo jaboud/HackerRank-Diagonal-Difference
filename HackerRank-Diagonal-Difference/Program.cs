@@ -13,7 +13,7 @@ namespace HackerRank_Diagonal_Difference
             int sumrl = 0;
             int length = arr[0].Length;
             //For loop to get the length of the rows of the array,
-            for (int i = 0; i > length; i++)
+            for (int i = 0; i < length; i++)
             {
                 sumlr += arr[i][0 + i];
                 sumrl += arr[i][length - i - 1];
