@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace HackerRank_Diagonal_Difference
 {
@@ -27,19 +29,21 @@ namespace HackerRank_Diagonal_Difference
 
             int n = Convert.ToInt32(Console.ReadLine().Trim());
 
-            List<List<int>> arr = new List<List<int>>();
+            int[][] arr = new int[n][];
 
             for (int i = 0; i < n; i++)
             {
-                arr.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList());
+                arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
             }
 
-            int result = Result.DiagonalDifference(arr);
+            int result = Program.DiagonalDifference(arr);
 
             textWriter.WriteLine(result);
 
             textWriter.Flush();
             textWriter.Close();
         }
+
+
     }
 }
