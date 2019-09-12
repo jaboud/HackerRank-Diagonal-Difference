@@ -20,11 +20,26 @@ namespace HackerRank_Diagonal_Difference
             }
 
             return Math.Abs(sumlr - sumrl);
-
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+            int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+            List<List<int>> arr = new List<List<int>>();
+
+            for (int i = 0; i < n; i++)
+            {
+                arr.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList());
+            }
+
+            int result = Result.DiagonalDifference(arr);
+
+            textWriter.WriteLine(result);
+
+            textWriter.Flush();
+            textWriter.Close();
         }
     }
 }
