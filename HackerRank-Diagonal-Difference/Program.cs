@@ -42,6 +42,8 @@ namespace HackerRank_Diagonal_Difference
 
             textWriter.Flush();
             textWriter.Close();
+
+            Console.ReadLine();
         }
 
 
